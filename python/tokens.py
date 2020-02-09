@@ -58,7 +58,7 @@ def test_string_end():
 def number_end(codes, index):
     r = ''
     i = index   # 下一个元素 索引
-    numbers = '0123456789'
+    numbers = '+-.0123456789'
     while (i < len(codes)):
         c = codes[i]
         if found(numbers, c):
@@ -131,7 +131,7 @@ def tokens(codes):          # codes  就是 json 数据
     symbols = ':,{}[]'      # 单字符符号
     keywords = 'tfn'        # 处理 keysword（true, false, null）
     strs = ''''"'''         # 处理  字符串  单引号 ' 双引号 "
-    numbers = '0123456789'  # 处理 数字
+    numbers = '+-.0123456789'  # 处理 数字
     i = 0
     while(i < length):      # 循环遍历 json_data 转换成 token
         c = codes[i]
